@@ -4,12 +4,14 @@
   "description": "Implementação do https://tabnews.com/br para o https://curso.dev",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run services:up && next dev",
+    "services:up": "docker compose -f ./infra/compose.yaml up -d",
+    "services:down": "docker compose -f ./infra/compose.yaml down -d",
+    "services:stop": "docker compose -f ./infra/compose.yaml stop -d",
     "lint:check": "prettier --check .",
     "lint:fix": "prettier --write .",
     "test": "jest",
     "test:watch": "jest --watchAll",
-    "database": "docker compose -f ./infra/compose.yaml up -d",
     "recreate database": "docker compose up -d --force-recreate"
   },
   "author": "",
