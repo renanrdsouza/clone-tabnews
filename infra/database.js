@@ -10,6 +10,7 @@ async function query(queryObject) {
     max: 100,
     connectionTimeoutMillis: 2000,
     allowExitOnIdle: true,
+    ssl: process.env.NODE_ENV === "development" ? false : true
   });
   const client = await pool.connect();
 
