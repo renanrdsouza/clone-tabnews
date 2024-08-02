@@ -21,6 +21,8 @@ async function waitForAllServices() {
   console.log("All services are ready!");
 }
 
-export default {
+const orchestrator = {
   waitForAllServices,
 };
+
+export default orchestrator;
